@@ -31,7 +31,17 @@ class Webhook {
                 $result["wamid"] = $hook["messages"][0]["id"] ?? "";
                 $result["timestamp"] = $hook["messages"][0]["timestamp"] ?? "";
                 $result["type"] = $hook["messages"][0]["type"] ?? "";
-                $result["text"] = $hook["messages"][0]["text"]["body"] ?? "";
+
+                switch($result["type"]){
+                    case "image":
+                        $result["text"] = $hook["messages"][0]["image"]["caption"] ?? "";
+                        break;
+                    case "document":
+                        $result["text"] = $hook["messages"][0]["document"]["caption"] ?? "";
+                        break;
+                    default:
+                        $result["text"] = $hook["messages"][0]["text"]["body"] ?? "";
+                }
             }
 
             # for status
