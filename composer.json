@@ -1,6 +1,7 @@
 {
     "name": "rumahweb/whatsapp-sdk",
     "type": "library",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Rumahweb\\": "src/"
