@@ -15,8 +15,7 @@ trait HandlesRequest
         } 
         
         catch (ClientException $e) {
-            return json_decode($e->getResponse()?->getBody(), true);
-            
+            return json_decode($e->getResponse() ? $e->getResponse()->getBody() : null, true);
         } 
         
         catch (RequestException $e) {
