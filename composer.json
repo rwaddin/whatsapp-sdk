@@ -1,0 +1,19 @@
+{
+    "name": "rumahweb/whatsapp-sdk",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Rumahweb\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "addin",
+            "email": "addin@rumahweb.co.id"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "guzzlehttp/guzzle": "7.9.3"
+    }
+}
