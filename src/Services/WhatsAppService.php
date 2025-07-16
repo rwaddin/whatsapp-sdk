@@ -3,6 +3,9 @@
 namespace Rumahweb\Services;
 
 use GuzzleHttp\Client;
+use Rumahweb\Services\WabaService;
+use Rumahweb\Services\MessageService;
+use Rumahweb\Services\MessageTemplateService;
 
 class WhatsAppService {
     
@@ -32,6 +35,10 @@ class WhatsAppService {
             throw new \Exception("Missing wabaId");
         }
         return new MessageService($this->client, $wabaId);
+    }
+
+    public function template(string $wabaId): MessageTemplateService {
+        return new MessageTemplateService($this->client, $wabaId);
     }
 
 }
